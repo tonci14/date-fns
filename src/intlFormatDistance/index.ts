@@ -8,14 +8,14 @@ import differenceInCalendarMonths from '../differenceInCalendarMonths/index'
 import differenceInCalendarQuarters from '../differenceInCalendarQuarters/index'
 import differenceInCalendarYears from '../differenceInCalendarYears/index'
 import toDate from '../toDate/index'
-import { daysInYear } from '../constants/index'
+import { yearInDays } from '../constants/index'
 import { Unit } from '../types'
 
 const secondsInMinute = 60
 const secondsInHour = 60 * secondsInMinute
 const secondsInDay = secondsInHour * 24
 const secondsInWeek = secondsInDay * 7
-const secondsInYear = secondsInDay * daysInYear
+const secondsInYear = secondsInDay * yearInDays
 const secondsInMonth = secondsInYear / 12
 const secondsInQuarter = secondsInMonth * 3
 
