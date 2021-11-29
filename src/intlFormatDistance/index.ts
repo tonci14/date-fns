@@ -1,15 +1,15 @@
-import requiredArgs from '../_lib/requiredArgs/index'
-import differenceInSeconds from '../differenceInSeconds/index'
-import differenceInMinutes from '../differenceInMinutes/index'
-import differenceInHours from '../differenceInHours/index'
+import { yearInDays } from '../constants/index'
 import differenceInCalendarDays from '../differenceInCalendarDays/index'
-import differenceInCalendarWeeks from '../differenceInCalendarWeeks/index'
 import differenceInCalendarMonths from '../differenceInCalendarMonths/index'
 import differenceInCalendarQuarters from '../differenceInCalendarQuarters/index'
+import differenceInCalendarWeeks from '../differenceInCalendarWeeks/index'
 import differenceInCalendarYears from '../differenceInCalendarYears/index'
+import differenceInHours from '../differenceInHours/index'
+import differenceInMinutes from '../differenceInMinutes/index'
+import differenceInSeconds from '../differenceInSeconds/index'
 import toDate from '../toDate/index'
-import { yearInDays } from '../constants/index'
-import { Unit } from '../types'
+import type { Unit } from '../types'
+import requiredArgs from '../_lib/requiredArgs/index'
 
 const secondsInMinute = 60
 const secondsInHour = 60 * secondsInMinute
