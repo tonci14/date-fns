@@ -18,7 +18,7 @@ export const daysInWeek = 7
  *  @type {number}
  *  @default
  */
-export let yearInDays: number = 365.2425
+export let daysInYear: number = 365.2425
 
 /**
  * Maximum allowed time.
@@ -129,3 +129,53 @@ export const secondsInHour = 3600
  * @default
  */
 export const secondsInMinute = 60
+
+/**
+ * Seconds in 1 day
+ *
+ * @name secondsInDay
+ * @constant
+ * @type {number}
+ * @default
+ */
+export const secondsInDay = secondsInHour * 24
+
+/**
+ * Seconds in 1 week
+ *
+ * @name secondsInWeek
+ * @constant
+ * @type {number}
+ * @default
+ */
+export const secondsInWeek = secondsInDay * 7
+
+/**
+ * Seconds in 1 year
+ *
+ * @name secondsInYear
+ * @constant
+ * @type {number}
+ * @default
+ */
+export const secondsInYear = secondsInDay * daysInYear
+
+/**
+ * Seconds in 1 month
+ *
+ * @name secondsInMonth
+ * @constant
+ * @type {number}
+ * @default
+ */
+export const secondsInMonth = secondsInYear / 12
+
+/**
+ * Seconds in 1 quarter
+ *
+ * @name secondsInQuarter
+ * @constant
+ * @type {number}
+ * @default
+ */
+export const secondsInQuarter = secondsInMonth * 3

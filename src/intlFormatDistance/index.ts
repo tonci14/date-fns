@@ -1,4 +1,12 @@
-import { yearInDays } from '../constants/index'
+import {
+  secondsInDay,
+  secondsInHour,
+  secondsInMinute,
+  secondsInMonth,
+  secondsInQuarter,
+  secondsInWeek,
+  secondsInYear,
+} from '../constants'
 import differenceInCalendarDays from '../differenceInCalendarDays/index'
 import differenceInCalendarMonths from '../differenceInCalendarMonths/index'
 import differenceInCalendarQuarters from '../differenceInCalendarQuarters/index'
@@ -10,14 +18,6 @@ import differenceInSeconds from '../differenceInSeconds/index'
 import toDate from '../toDate/index'
 import type { Unit } from '../types'
 import requiredArgs from '../_lib/requiredArgs/index'
-
-const secondsInMinute = 60
-const secondsInHour = 60 * secondsInMinute
-const secondsInDay = secondsInHour * 24
-const secondsInWeek = secondsInDay * 7
-const secondsInYear = secondsInDay * yearInDays
-const secondsInMonth = secondsInYear / 12
-const secondsInQuarter = secondsInMonth * 3
 
 /**
  * @name intlFormatDistance
