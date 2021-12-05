@@ -214,8 +214,8 @@ export default function intlFormatDistance(
 
   let value: number = 0
   let unit: Intl.RelativeTimeFormatUnit
-  let dateLeft = toDate(date)
-  let dateRight = toDate(baseDate)
+  const dateLeft = toDate(date)
+  const dateRight = toDate(baseDate)
 
   if (!options?.unit) {
     // Get the unit based on diffInSeconds calculations if no unit passed in
