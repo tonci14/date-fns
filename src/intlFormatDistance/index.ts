@@ -30,54 +30,54 @@ import requiredArgs from '../_lib/requiredArgs/index'
  * or allows a user to pass in a unit as well.
  * If a unit is passed in, it will be applied accordingly. Otherwise - see the table below:
  *
- * | Distance between dates       | Result              |
- * |------------------------------|---------------------|
- * |   1 second                   | in 1 second         |
- * |   n seconds                  | in n seconds        |
- * |   1 minute                   | in 1 minute         |
- * |   n minutes                  | in n minutes        |
- * |   1 hour                     | in 1 hour           |
- * |   n hours                    | in n hours          |
- * |   1 day                      | in 1 day            |
- * |   n days                     | in n days           |
- * |   1 week                     | in 1 week           |
- * |   n weeks                    | in n weeks          |
- * |   1 month                    | in 1 month          |
- * |   n months                   | in n months         |
- * |   1 quarter                  | in 1 quarter        |
- * |   n quarters                 | in n quarters       |
- * |   1 year                     | in 1 year           |
- * |   n years                    | in n years          |
+ * |    Distance between dates   |               Result               |
+ * |-----------------------------|------------------------------------|
+ * |  1 second                   | in 1 second                        |
+ * |  n seconds                  | in n seconds                       |
+ * |  1 minute                   | in 1 minute                        |
+ * |  n minutes                  | in n minutes                       |
+ * |  1 hour                     | in 1 hour                          |
+ * |  n hours                    | in n hours                         |
+ * |  1 day                      | in 1 day                           |
+ * |  n days                     | in n days                          |
+ * |  1 week                     | in 1 week                          |
+ * |  n weeks                    | in n weeks                         |
+ * |  1 month                    | in 1 month                         |
+ * |  n months                   | in n months                        |
+ * |  1 quarter                  | in 1 quarter                       |
+ * |  n quarters                 | in n quarters                      |
+ * |  1 year                     | in 1 year                          |
+ * |  n years                    | in n years                         |
  *
  *
- *  With `options.unit = 'hour'`
- * | Distance between dates | Result               |
- * |------------------------|----------------------|
- * | 1 day                  | in 24 hours          |
- * | 1 week                 | in 168 hours         |
+ *  With `unit = 'hour'` - formats the distance with the unit of an hour
+ * |   Distance between dates    |               Result               |
+ * |-----------------------------|------------------------------------|
+ * | 1 day                       | in 24 hours                        |
+ * | 1 week                      | in 168 hours                       |
  *
  *
- *  With `options.locale = 'de'`
- * | Distance between dates | Result               |
- * |------------------------|----------------------|
- * | 1 day                  | in 1 Tag             |
- * | 1 week                 | in 1 Woche           |
+ *  With `locale = 'de'` - formats the distance with the given locale `de`
+ * |   Distance between dates    |               Result               |
+ * |-----------------------------|------------------------------------|
+ * | 1 day                       | in 1 Tag                           |
+ * | 1 week                      | in 1 Woche                         |
  *
  *
- *  With `options.numeric: 'auto' `
- * | Distance between dates | Result               |
- * |------------------------|----------------------|
- * | 0 seconds              | now                  |
- * | 1 day                  | tomorrow             |
+ *  With `numeric: 'auto'` - formats the distance with the given message format `auto`
+ * | Distance between dates      | Result                             |
+ * |-----------------------------|------------------------------------|
+ * | 0 seconds                   | now                                |
+ * | 1 day                       | tomorrow                           |
  *
  *
- * | Other options     | Possible values         |  Result            |
+ *  Other options examples
+ * |   Other options   |     Possible values     |       Result       |
  * |-------------------|-------------------------|--------------------|
  * | localeMatcher     | 'lookup' and 'best fit' | N/A                |
  * |                   |                         |                    |
  * | numeric           | 'always'                | 1 day ago          |
  * |                   | 'auto'                  | yesterday          |
- * |                   |                         |                    |
  * | style             | 'long'                  | in 1 month         |
  * |                   | 'short'                 | in 1 mo.           |
  * |                   | 'narrow'                | in 1 mo.           |
@@ -102,7 +102,7 @@ import requiredArgs from '../_lib/requiredArgs/index'
  *
  * @example
  * // What is the distance between Apr, 4 1986 11:30:00 and Apr, 4 1986 10:30:00 in Intl?
- * const result = intlFormatDistance(
+ * intlFormatDistance(
  *   new Date(1986, 3, 4, 11, 30, 0),
  *   new Date(1986, 3, 4, 10, 30, 0)
  * )
@@ -110,7 +110,7 @@ import requiredArgs from '../_lib/requiredArgs/index'
  *
  * @example
  * // What is the distance between Apr, 4 1987 10:30:00 and Apr, 4 1986 10:30:00 in Intl?
- * const result = intlFormatDistance(
+ * intlFormatDistance(
  *   new Date(1987, 3, 4, 10, 30, 0),
  *   new Date(1986, 3, 4, 10, 30, 0)
  * )
@@ -118,7 +118,7 @@ import requiredArgs from '../_lib/requiredArgs/index'
  *
  * @example
  * // What is the distance between Apr, 4 1987 10:30:00 and Apr, 4 1986 10:30:00 in quarters in Intl?
- * const result = intlFormatDistance(
+ * intlFormatDistance(
  *   new Date(1987, 3, 4, 10, 30, 0),
  *   new Date(1986, 3, 4, 10, 30, 0),
  *   { unit: 'quarter' }
@@ -127,7 +127,7 @@ import requiredArgs from '../_lib/requiredArgs/index'
  *
  * @example
  * // What is the distance between Apr, 4 1987 10:30:00 and Apr, 4 1986 10:30:00 in months in Intl?
- * const result = intlFormatDistance(
+ * intlFormatDistance(
  *   new Date(1987, 3, 4, 10, 30, 0),
  *   new Date(1986, 3, 4, 10, 30, 0),
  *   { unit: 'month' }
@@ -136,7 +136,7 @@ import requiredArgs from '../_lib/requiredArgs/index'
  *
  * @example
  * // What is the distance between Apr, 4 1987 10:30:00 and Apr, 4 1986 10:30:00 in weeks in Intl?
- * const result = intlFormatDistance(
+ * intlFormatDistance(
  *   new Date(1987, 3, 4, 10, 30, 0),
  *   new Date(1986, 3, 4, 10, 30, 0),
  *   { unit: 'week' }
@@ -145,7 +145,7 @@ import requiredArgs from '../_lib/requiredArgs/index'
  *
  * @example
  * // What is the distance between Apr, 4 1987 10:30:00 and Apr, 4 1986 10:30:00 in days in Intl?
- * const result = intlFormatDistance(
+ * intlFormatDistance(
  *   new Date(1987, 3, 4, 10, 30, 0),
  *   new Date(1986, 3, 4, 10, 30, 0),
  *   { unit: 'day' }
@@ -154,7 +154,7 @@ import requiredArgs from '../_lib/requiredArgs/index'
  *
  * @example
  * // What is the distance between Apr, 4 1987 10:30:00 and Apr, 4 1986 10:30:00 in hours in Intl?
- * const result = intlFormatDistance(
+ * intlFormatDistance(
  *   new Date(1987, 3, 4, 10, 30, 0),
  *   new Date(1986, 3, 4, 10, 30, 0),
  *   { unit: 'hour' }
@@ -163,7 +163,7 @@ import requiredArgs from '../_lib/requiredArgs/index'
  *
  * @example
  * // What is the distance between Apr, 4 1987 10:30:00 and Apr, 4 1986 10:30:00 in minutes in Intl?
- * const result = intlFormatDistance(
+ * intlFormatDistance(
  *   new Date(1987, 3, 4, 10, 30, 0),
  *   new Date(1986, 3, 4, 10, 30, 0),
  *   { unit: 'minute' }
@@ -172,7 +172,7 @@ import requiredArgs from '../_lib/requiredArgs/index'
  *
  * @example
  * // What is the distance between Apr, 4 1987 10:30:00 and Apr, 4 1986 10:30:00 in seconds in Intl?
- * const result = intlFormatDistance(
+ * intlFormatDistance(
  *   new Date(1987, 3, 4, 10, 30, 0),
  *   new Date(1986, 3, 4, 10, 30, 0),
  *   { unit: 'second' }
@@ -181,7 +181,7 @@ import requiredArgs from '../_lib/requiredArgs/index'
  *
  * @example
  * // What is the distance between Apr, 4 1986 11:30:00 and Apr, 4 1986 10:30:00 in minutes in Spanish in Intl?
- * const result = intlFormatDistance(
+ * intlFormatDistance(
  *   new Date(1986, 3, 4, 11, 30, 0),
  *   new Date(1986, 3, 4, 10, 30, 0),
  *   { unit: 'minute', locale: 'es' }
@@ -190,7 +190,7 @@ import requiredArgs from '../_lib/requiredArgs/index'
  *
  * @example
  * // What is the distance between Apr, 4 1986 11:30:00 and Apr, 4 1986 10:30:00 in minutes in German in Intl?
- * const result = intlFormatDistance(
+ * intlFormatDistance(
  *   new Date(1986, 3, 4, 11, 30, 0),
  *   new Date(1986, 3, 4, 10, 30, 0),
  *   { unit: 'minute', locale: 'de' }
@@ -274,14 +274,11 @@ export default function intlFormatDistance(
     }
   }
 
-  const rtf = new Intl.RelativeTimeFormat(
-    options?.locale || 'en',
-    {
-      localeMatcher: options?.localeMatcher,
-      numeric: options?.numeric || 'auto',
-      style: options?.style,
-    } || {}
-  )
+  const rtf = new Intl.RelativeTimeFormat(options?.locale || 'en', {
+    localeMatcher: options?.localeMatcher,
+    numeric: options?.numeric || 'auto',
+    style: options?.style,
+  })
 
   return rtf.format(value, unit)
 }
