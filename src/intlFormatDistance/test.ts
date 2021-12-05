@@ -345,7 +345,7 @@ describe('intlFormatDistance', function () {
         new Date(1985, 4, 4, 10, 30, 0),
         { style: 'short', numeric: 'auto' }
       )
-      assert(result === 'next mo.')
+      assert(result === 'next mo')
     })
 
     it('prints `next yr.`', function () {
@@ -354,7 +354,7 @@ describe('intlFormatDistance', function () {
         new Date(1985, 4, 5, 10, 30, 0),
         { style: 'short', numeric: 'auto' }
       )
-      assert(result === 'next yr.')
+      assert(result === 'next yr')
     })
 
     it('prints out `in 0 seconds`', function () {

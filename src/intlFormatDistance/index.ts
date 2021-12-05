@@ -274,7 +274,7 @@ export default function intlFormatDistance(
     }
   }
 
-  const rtf = new Intl.RelativeTimeFormat(options?.locale || 'en', {
+  const rtf = new Intl.RelativeTimeFormat(options?.locale, {
     localeMatcher: options?.localeMatcher,
     numeric: options?.numeric || 'auto',
     style: options?.style,
