@@ -89,7 +89,7 @@ import requiredArgs from '../_lib/requiredArgs/index'
  * @param {String|String[]} [options.locale] - the locale to use (BCP 47 language tag). [For the reference see MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#locale_identification_and_negotiation).
  * @param {String} [options.localeMatcher='best fit'] - the locale matching algorithm to use. Other value: "lookup".
  * @param {String} [options.numeric='always'] - the output message format. Other value: "auto".
- * @param {String} [options.style='long'] - the length of the internationalized message. Other values: "short" or "narrow";
+ * @param {String} [options.style='long'] - the length of the internationalized message. Other values: "short" or "narrow".
  * @returns {String} the distance in words according to language-sensitive relative time formatting.
  * @throws {TypeError} 2 arguments required
  * @throws {RangeError} `date` must not be Invalid Date
