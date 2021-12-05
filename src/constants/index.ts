@@ -9,7 +9,7 @@
 export const daysInWeek = 7
 
 /**
- * Days In Year
+ * Days in 1 year
  * One years equals 365.2425 days according to the formula:
  *
  * > Leap year occures every 4 years, except for years that are divisable by 100 and not divisable by 400.
